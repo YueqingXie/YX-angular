@@ -1,0 +1,59 @@
+/* button { 
+    display: block;
+    transition-duration: 0.4s;
+    color: white;
+    border-color: #8b8d8f;
+    border-width: 1px;
+    border-radius: 10px;
+    background: #8b8d8f;
+  }
+  button:hover{
+    background: #b4b7b9;
+  } */
+
+  #submit { 
+    display: block;
+    margin-top: 15px;
+    transition-duration: 0.4s;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10px;
+    background: transparent;
+  }
+  #submit:hover{
+    background: white;
+  }
+
+  /* ::ng-deep .myModal .modal-dialog { 
+    max-width: 80%;
+    width: 80%;
+} */
+
+
+@media screen and (max-width: 2000px) {
+  ::ng-deep .myModal .modal-dialog { 
+    max-width: 70%;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  ::ng-deep .myModal .modal-dialog { 
+    max-width: 80%;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  ::ng-deep .myModal .modal-dialog { 
+    max-width: 90%;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  ::ng-deep .myModal .modal-dialog { 
+    max-width: 100%;
+    width: 100%;
+  }
+}

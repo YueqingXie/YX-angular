@@ -1,0 +1,60 @@
+<div>
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">
+			Your order
+		</h4>
+		<button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+			<span aria-hidden="true">
+				×
+			</span>
+		</button>
+	</div>
+
+	<!-- <div class="modal-body">
+		<div *ngIf="order; else loading" class="form-row">
+			<div *ngIf="burgers">
+				<div><strong>Burgers: </strong><br />{{burgers}}</div>
+			</div>
+			<br />
+			<div *ngIf="steaks">
+				<div><strong>Steaks: </strong><br />{{steaks}}</div>
+			</div>
+			<br />
+			<div><strong>Request: </strong><br />{{request}}</div>
+			<br />
+		</div>  
+		<ng-template #loading>No orders yet</ng-template>
+	</div> -->
+	<div class="modal-body">
+		<div *ngIf="burgers">
+			<div><strong>Burgers: </strong><br />{{burgers}}</div>
+		</div>
+	</div>
+	<div class="modal-body">
+		<div *ngIf="steaks">
+			<div><strong>Steaks: </strong><br />{{steaks}}</div>
+		</div>
+	</div>
+	<div class="modal-body">
+		<div *ngIf="request">
+			<div><strong>Request: </strong><br />{{request}}</div>
+		</div>
+	</div>
+
+
+	<div class="modal-footer">
+		<button type="button"
+			class="btn btn-outline-dark"
+			(click)="modal.close('Save click'); refreshPage()">
+			Reorder
+		</button>
+	</div>
+
+</ng-template>
+</div>
+<!-- 
+<button (click)="returnOrder(); open(content)">
+	Your order
+</button> -->
+<button id="submit" [disabled]="(!burgers) && (!steaks)" (click)="returnOrder(); open(content)">Submit</button>

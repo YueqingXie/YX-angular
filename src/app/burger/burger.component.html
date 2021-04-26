@@ -1,0 +1,60 @@
+<form [formGroup]="burgerForm" (ngSubmit)="onSubmit()">
+  <h2>Burger</h2>
+
+  <label class="mainLabel">Please select condiments:</label>
+  <div class="grouping">
+    <label><input type="checkbox" formControlName="ketchup"> ketchup</label>
+    <label><input type="checkbox" formControlName="mustard"> mustard</label>
+    <label><input type="checkbox" formControlName="letture"> letture</label>
+    <label><input type="checkbox" formControlName="tomato"> tomato</label>
+  </div>
+
+  <label class="mainLabel">Please choose fries or salad:</label>
+  <select formControlName="fos" (change)="selectfos($event)">
+    <option *ngFor="let fos of foss" [value]="fos" >{{fos}}</option>
+  </select>
+
+  <div [ngSwitch]="currentfos">
+
+    <form [formGroup]="friesForm">
+      <div *ngSwitchCase="'fries'">
+        <label class="mainLabel">Please select fries size:</label>
+        <select formControlName="size">
+          <option *ngFor="let size of sizes" [value]="size">{{size}}</option>
+        </select>
+      </div>
+    </form>
+      
+    <form [formGroup]="saladForm">
+      <div *ngSwitchCase="'salad'">
+        <label class="mainLabel">Please select salad dressing:</label>
+        <select formControlName="dressing">
+          <option *ngFor="let dressing of dressings" [value]="dressing">{{dressing}}</option>
+        </select>
+      </div>
+    </form>
+
+      <!-- <div *ngSwitchCase="'fries'">
+        <form [formGroup]="friesForm">
+        <label class="mainLabel">Please select fries size:</label>
+        <select formControlName="size">
+          <option *ngFor="let size of sizes" [value]="size">{{size}}</option>
+        </select>
+      </form>
+      </div>
+    
+      <div *ngSwitchCase="'salad'">
+        <form [formGroup]="saladForm">
+        <label class="mainLabel">Please select salad dressing:</label>
+        <select formControlName="dressing">
+          <option *ngFor="let dressing of dressings" [value]="dressing">{{dressing}}</option>
+        </select>
+      </form>
+      </div> -->
+
+  </div>
+
+
+  <button id="add" type="submit" [disabled]="!burgerForm.valid">Add</button>
+
+</form>

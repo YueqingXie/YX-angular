@@ -1,0 +1,36 @@
+.mainContent{
+    border: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
+/* 
+#submit { 
+    display: block;
+    margin-top: 15px;
+    transition-duration: 0.4s;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10px;
+    background: transparent;
+  }
+  #submit:hover{
+    background: white;
+  } */
+
+.yourorder{
+  position: absolute;
+  right: 10%;
+  font-size: 1.2em;
+}
+
+.hide{
+  display: none;
+}
+
+.mainmenu{
+  color: black;
+  text-decoration: underline;
+}

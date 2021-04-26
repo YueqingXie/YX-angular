@@ -1,0 +1,46 @@
+<form [formGroup]="steakForm" (ngSubmit)="onSubmit()">
+    <h2>Steak</h2>
+
+    <label class="mainLabel">Please select doneness:</label>
+    <select formControlName="done">
+      <option *ngFor="let done of doneness" [value]="done">{{done}}</option>
+    </select>
+  
+
+    <label class="mainLabel">Please choose salad or baked potatoes:</label>
+    <select formControlName="sop" (change)="selectsop($event)">
+      <option *ngFor="let sop of sops" [value]="sop" >{{sop}}</option>
+    </select>
+  
+    <div [ngSwitch]="currentsop">
+
+      <form [formGroup]="saladForm">
+      <div *ngSwitchCase="'salad'">
+        <label class="mainLabel">Please select salad dressing:</label>
+        <select formControlName="dressing">
+          <option *ngFor="let dressing of dressings" [value]="dressing">{{dressing}}</option>
+        </select>
+      </div>
+      </form>
+
+      <form [formGroup]="potatoForm">
+      <div *ngSwitchCase="'baked potatoes'">
+        <label class="mainLabel">Please specify number of potatoes: (1-5)</label>
+        <!-- <textarea></textarea> -->
+        <input type="text" formControlName="nop">
+      </div>
+      </form>
+
+    </div>
+  
+
+
+    <button id="add" type="submit" [disabled]="!potatoForm.valid">Add</button>
+  </form>
+  
+
+
+
+  <!-- <div *ngIf="steaks" class="form-row">
+    <strong>Saved steaks: </strong><br>{{steaks}}
+  </div>   -->

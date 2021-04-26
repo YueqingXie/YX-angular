@@ -1,0 +1,32 @@
+* {
+    font-family: Lato;
+    font-size: 16px;
+  }
+  
+  label {
+    display: block;
+  }
+
+  .mainLabel{
+    padding-top: 15px;
+    padding-bottom: 5px;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+    text-decoration: underline;
+  }
+  
+  
+  #add { 
+    display: block;
+    margin-top: 15px;
+    transition-duration: 0.4s;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10px;
+    background: transparent;
+  }
+  #add:hover{
+    background: white;
+  }
